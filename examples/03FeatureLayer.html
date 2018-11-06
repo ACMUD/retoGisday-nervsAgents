@@ -30,26 +30,33 @@
             "esri/layers/FeatureLayer",
         ], function(Map, MapView, FeatureLayer) {
 
-            var portals = new FeatureLayer ({
-                url: "https://services1.arcgis.com/J5ltM0ovtzXUbp7B/arcgis/rest/services/Transmilenio_RP/FeatureServer/0"
-                // url: "http://arcgis.simec.gov.co:6080/arcgis/rest/services/UPME_EN/UPME_EN_Generaci%C3%B3n_Real/MapSer   ver/0"
+            var controlValve = new FeatureLayer ({
+                url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/11"
             });
 
-            var stations = new FeatureLayer ({
-                url: "https://services1.arcgis.com/J5ltM0ovtzXUbp7B/arcgis/rest/services/Transmilenio_RP/FeatureServer/1"
-                // url: "http://arcgis.simec.gov.co:6080/arcgis/rest/services/UPME_EN/UPME_EN_Generaci%C3%B3n_Real/MapSer   ver/0"
+            var treatmentPlant = new FeatureLayer ({
+                url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/4"
             });
+
+            var systemValve = new FeatureLayer ({
+                url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/12"
+            });
+
+            var redMatriz = new FeatureLayer ({
+                url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/15"
+            });
+
     
             var map = new Map ({
-                basemap: "topo", //dark-gray",
-                layers: [portals, stations]
+                basemap: "topo", 
+                layers: [controlValve, treatmentPlant, systemValve, redMatriz]
             });
 
             var mapView = new MapView ({
                 container: "mapView",
                 map: map,
-                center: [-74, 3],
-                scale: 50000
+                center: [-74, 4.6],
+                scale: 500000
             });
         });
     </script>

@@ -3,11 +3,11 @@ body {
     width: 96vw;
 }
 
-#mapView {
+.mapView {
     height: 100%;
     width: 100%;
 }
 
 .mapContainer {
-    height: 400px;
+    height: 900px;
 }   
