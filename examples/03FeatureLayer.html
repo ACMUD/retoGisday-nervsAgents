@@ -30,26 +30,26 @@
             "esri/layers/FeatureLayer",
         ], function(Map, MapView, FeatureLayer) {
 
-            //var controlValve = new FeatureLayer ({
-            //    url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/11"
-            //});
+            var controlValve = new FeatureLayer ({
+                url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/11"
+            });
 
             var treatmentPlant = new FeatureLayer ({
                 url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/4"
             });
 
-            //var systemValve = new FeatureLayer ({
-            //    url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/12"
-            //});
+            var systemValve = new FeatureLayer ({
+                url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/12"
+            });
 
-            //var redMatriz = new FeatureLayer ({
-            //    url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/15"
-            //});
+            var redMatriz = new FeatureLayer ({
+                url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/15"
+            });
 
     
             var map = new Map ({
                 basemap: "topo", 
-                layers: [treatmentPlant]
+                layers: [controlValve, treatmentPlant, systemValve, redMatriz]
             });
 
             var mapView = new MapView ({
