@@ -7,7 +7,7 @@ require([
     });
 
     var mapView = new MapView ({
-        container: "mainMap",
+        container: "mapView",
         map: map
     });
 });
