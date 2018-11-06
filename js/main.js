@@ -1,39 +1,20 @@
-require([
-    "esri/Map",
-    "esri/views/MapView",
+var actualCity = 'BOGOTÁ'
 
-    "esri/layers/FeatureLayer",
-], function (Map, MapView, FeatureLayer) {
+const setCity = (city) => {
+    actualCity = city
+    document.getElementById("cityName").innerHTML = actualCity
+    chargeMaps()
+}
 
-    // valvulas de control
-    var controlValve = new FeatureLayer({
-        url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/11"
-    });
+$(document).ready(chargeMaps())
 
-    // Planta de Tratamniento
-    var treatmentPlant = new FeatureLayer({
-        url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/4"
-    });
+function chargeMaps() {
+    switch (actualCity) {
+        case "BOGOTÁ":
+            chargeMapsBogota()
+            break;
+        default:
+            break;
+    }
+}
 
-    // Valvulas del Sistema
-    var systemValve = new FeatureLayer({
-        url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/12"
-    });
-
-    // Matriz
-    var redMatriz = new FeatureLayer({
-        url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/15"
-    });
-
-    var map = new Map({
-        basemap: "dark-gray",
-        layers: [controlValve, treatmentPlant, systemValve, redMatriz]
-    });
-
-    var mapView = new MapView({
-        container: "mapView1",
-        map: map,
-        center: [-74.13, 4.65],
-        scale: 100000
-    });
-});
