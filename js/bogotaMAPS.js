@@ -10,13 +10,13 @@ function chargeMap(showRedMatriz, showPlantaTratamiento, showConduccion, showCam
     ], function (Map, MapView, FeatureLayer, Legend, Expand) {
 
         //Red principal de alcantarillado
-        var redMatriz = new FeatureLayer({
+        let redMatriz = new FeatureLayer({
             url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/15",
             visible: showRedMatriz
         });
 
         //Plantas de tratamiento
-        var plantaTratamiento = new FeatureLayer({
+        let plantaTratamiento = new FeatureLayer({
             url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/4",
             visible: showPlantaTratamiento
         });
@@ -32,76 +32,76 @@ function chargeMap(showRedMatriz, showPlantaTratamiento, showConduccion, showCam
         };
 
         //Red de alcantarillado fronteriza
-        var conduccion = new FeatureLayer({
+        let conduccion = new FeatureLayer({
             url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/1",
             visible: showConduccion
         });
 
         //Camaras de conexión de redes
-        var camaraAcceso = new FeatureLayer({
+        let camaraAcceso = new FeatureLayer({
             url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/2",
             visible: showCamaraAcceso
         });
 
         //Bombeo de Aguas
-        var estacionBombeo = new FeatureLayer({
+        let estacionBombeo = new FeatureLayer({
             url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/3",
             visible: showEstacionBombeo,
         });
 
         //Estaciones 
-        var hidrante = new FeatureLayer({
+        let hidrante = new FeatureLayer({
             url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/7",
             // datos url: "http://www.arcgis.com/home/item.html?id=1027ce2fc6a3431a86e76c3dbd575c2f#data"
             visible: showHidrante
         });
 
-        var valvulaControl = new FeatureLayer({
+        let valvulaControl = new FeatureLayer({
             url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/11",
             visible: showValvulaControl
         });
 
-        var redMenor = new FeatureLayer({
+        let redMenor = new FeatureLayer({
             url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/14",
             visible: showRedMenor
         });
 
-        var distrito = new FeatureLayer({
+        let distrito = new FeatureLayer({
             url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/17",
             visible: showDistrito
         });
 
-        var subSector = new FeatureLayer({
+        let subSector = new FeatureLayer({
             url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/18",
             visible: showSubSector
         });
 
-        var redTroncal = new FeatureLayer({
+        let redTroncal = new FeatureLayer({
             url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/AlcantarilladoSanitario/MapServer/9",
             visible: showRedTroncal
         });
 
-        var cuencaPluvial = new FeatureLayer({
+        let cuencaPluvial = new FeatureLayer({
             url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/AlcantarilladoPluvial/MapServer/13",
             visible: showCuencaPluvial
         });
 
-        var subCuencaPluvial = new FeatureLayer({
+        let subCuencaPluvial = new FeatureLayer({
             url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/AlcantarilladoPluvial/MapServer/12",
             visible: showSubCuencaPluvial
         });
 
-        var redTroncalPluvial = new FeatureLayer({
+        let redTroncalPluvial = new FeatureLayer({
             url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/AlcantarilladoPluvial/MapServer/9",
             visible: showRedTroncalPluvial
         });
 
-        var map = new Map({
+        let map = new Map({
             basemap: "hybrid",
             layers: [redMatriz, conduccion, camaraAcceso, estacionBombeo, plantaTratamiento, hidrante, valvulaControl, redMenor, redMatriz, distrito, redTroncal, subSector, cuencaPluvial, subCuencaPluvial, redTroncalPluvial]
         });
 
-        var mapView = new MapView({
+        let mapView = new MapView({
             container: "mapView1",
             map: map,
             center: [-74.13, 4.65],
@@ -114,8 +114,64 @@ function chargeMap(showRedMatriz, showPlantaTratamiento, showConduccion, showCam
                 style: "card",
                 layerInfos: [
                     {
-                        title: "Red de Alcantarillado",
+                        title: "redMatriz",
                         layer: redMatriz
+                    },
+                    {
+                        title: "conduccion",
+                        layer: conduccion
+                    },
+                    {
+                        title: "camaraAcceso",
+                        layer: camaraAcceso
+                    },
+                    {
+                        title: "estacionBombeo",
+                        layer: estacionBombeo
+                    },
+                    {
+                        title: "plantaTratamiento",
+                        layer: plantaTratamiento
+                    },
+                    {
+                        title: "hidrante",
+                        layer: hidrante
+                    },
+                    {
+                        title: "valvulaControl",
+                        layer: valvulaControl
+                    },
+                    {
+                        title: "redMenor",
+                        layer: redMenor
+                    },
+                    {
+                        title: "redMatriz",
+                        layer: redMatriz
+                    },
+                    {
+                        title: "distrito",
+                        layer: distrito
+                    },
+                    {
+                        title: "redTroncal",
+                        layer: redTroncal
+                    },
+                    {
+                        title: "subSector",
+                        layer: subSector
+                    },
+                    {
+                        title: "cuencaPluvial",
+                        layer: cuencaPluvial
+                    },
+                    {
+                        title: "subCuencaPluvial",
+                        layer: subCuencaPluvial
+                    },
+                    {
+                        title: "redTroncalPluvial",
+                        layer: redTroncalPluvial
                     }
                 ]
             }),

@@ -46,9 +46,173 @@
                             <div class="fa" style="color: darkcyan; height: 50px;text-align: center;display: flex;justify-content: center;align-items: center"><strong>CIUDADES
                                     - COLOMBIA</strong></div>
                             <li>
-                                <a href='#Bogota' onclick="setCity('BOGOTÁ')">
-                                    <i class="fa fa-caret-right fa-fw"></i> Bogotá
-                                </a>
+                                <div class='items'>
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Red principal de alcantarillado
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showRedMatriz')">
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Plantas de Tratamiento
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showPlantaTratamiento')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Red de alcantarillado fronteriza
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showConduccion')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Camaras de conexión de redes
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showCamaraAcceso')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Estaciones de Bombeo de Aguas
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showEstacionBombeo')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Estaciones
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showHidrante')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Valvula Control
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showValvulaControl')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Red Menor de alcantarillado
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showRedMenor')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Localidades
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showDistrito')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Sub Sectores de Acueducto
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showSubSector')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Red troncal de alcantarillado pluvial
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showRedTroncal')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Cuenca Pluvial
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showCuencaPluvial')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Sub Cuenca Pluvial
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showSubCuencaPluvial')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Red troncal de alcantarillado pluvial
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showRedTroncalPluvial')">
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -104,7 +268,9 @@
 
     </div>
     <!-- /#wrapper -->
-
+    <footer style="padding: 5px; text-align: right">
+        Authors <b>Tatiana Velandia Velandia</b> & <b>Edison Enrique Peñuela Mesa</b>
+    </footer>
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
 
