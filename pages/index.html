@@ -25,38 +25,206 @@
 
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-   
+
     <link rel="stylesheet" href="https://js.arcgis.com/4.9/esri/css/main.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/main.css" />
 </head>
 
 <body>
-
     <div id="wrapper">
-
         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header"> 
-                <a class="navbar-brand" >Nerv's Agent</a>
-            </div>
-
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li>
-                            <a href="index.html"><i class="fa fa-map-marker fa-fw"></i> Maps</a>
-                        </li>
-                    </ul>
+        <header>
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-brand">Student Chapter acm Universidad Distrital Francisco José de Caldas - <b>Nerv's
+                            Agent</b></a>
                 </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
 
-        <div id="page-wrapper">
+                <div class="navbar-default sidebar" role="navigation">
+                    <div class="sidebar-nav navbar-collapse">
+                        <ul class="nav" id="side-menu">
+                            <div class="fa" style="color: darkcyan; height: 50px;text-align: center;display: flex;justify-content: center;align-items: center"><strong>CIUDADES
+                                    - COLOMBIA</strong></div>
+                            <li>
+                                <div class='items'>
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Red principal de alcantarillado
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showRedMatriz')">
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Plantas de Tratamiento
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showPlantaTratamiento')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Red de alcantarillado fronteriza
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showConduccion')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Camaras de conexión de redes
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showCamaraAcceso')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Estaciones de Bombeo de Aguas
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showEstacionBombeo')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Estaciones
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showHidrante')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Valvula Control
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showValvulaControl')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Red Menor de alcantarillado
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showRedMenor')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Localidades
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showDistrito')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Sub Sectores de Acueducto
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showSubSector')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Red troncal de alcantarillado pluvial
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showRedTroncal')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Cuenca Pluvial
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showCuencaPluvial')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Sub Cuenca Pluvial
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showSubCuencaPluvial')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="items">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <i class="fa fa-caret-right fa-fw"></i> Red troncal de alcantarillado pluvial
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <input type="checkbox" onchange="changeLayerState('showRedTroncalPluvial')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.sidebar-collapse -->
+                </div>
+                <!-- /.navbar-static-side -->
+            </nav>
+        </header>
+        <div style="padding: 30px 10px 10px 10px" id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Maps</h1>
+                    <h1 class="page-header" id='cityName'>BOGOTÁ</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -77,13 +245,32 @@
                 </div>
                 <!-- /.col-lg-8 -->
             </div>
+            <div style="display: none;" class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            ESTADISTICAS DE POBLACION
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="statistics1"></div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-8 -->
+            </div>
+
             <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->
 
     </div>
     <!-- /#wrapper -->
-
+    <footer style="padding: 5px; text-align: right">
+        Authors <b>Tatiana Velandia Velandia</b> & <b>Edison Enrique Peñuela Mesa</b>
+    </footer>
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
 
@@ -100,8 +287,9 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
-    
+
     <script src="https://js.arcgis.com/4.9/"></script>
+    <script src="../js/bogotaMAPS.js"></script>
     <script src="../js/main.js"></script>
 </body>
 

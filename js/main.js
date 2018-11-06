@@ -1,39 +1,43 @@
-require([
-    "esri/Map",
-    "esri/views/MapView",
+var actualCity = 'BOGOTÁ'
+var layers = {
+    showRedMatriz: false,
+    showPlantaTratamiento: false,
+    showConduccion: false,
+    showCamaraAcceso: false,
+    showEstacionBombeo: false,
+    showHidrante: false,
+    showValvulaControl: false,
+    showRedMenor: false,
+    showDistrito: false,
+    showSubSector: false,
+    showRedTroncal: false,
+    showCuencaPluvial: false,
+    showSubCuencaPluvial: false,
+    showRedTroncalPluvial: false
+}
 
-    "esri/layers/FeatureLayer",
-], function (Map, MapView, FeatureLayer) {
+const changeLayerState = (layer) => {
+    layers[layer] = !layers[layer]
+    start()
+}
 
-    // valvulas de control
-    var controlValve = new FeatureLayer({
-        url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/11"
-    });
+$(document).ready(start())
 
-    // Planta de Tratamniento
-    var treatmentPlant = new FeatureLayer({
-        url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/4"
-    });
-
-    // Valvulas del Sistema
-    var systemValve = new FeatureLayer({
-        url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/12"
-    });
-
-    // Matriz
-    var redMatriz = new FeatureLayer({
-        url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/15"
-    });
-
-    var map = new Map({
-        basemap: "dark-gray",
-        layers: [controlValve, treatmentPlant, systemValve, redMatriz]
-    });
-
-    var mapView = new MapView({
-        container: "mapView1",
-        map: map,
-        center: [-74.13, 4.65],
-        scale: 100000
-    });
-});
+function start() {
+    chargeMap(
+        layers.showRedMatriz,
+        layers.showPlantaTratamiento,
+        layers.showConduccion,
+        layers.showCamaraAcceso,
+        layers.showEstacionBombeo,
+        layers.showHidrante,
+        layers.showValvulaControl,
+        layers.showRedMenor,
+        layers.showDistrito,
+        layers.showSubSector,
+        layers.showRedTroncal,
+        layers.showCuencaPluvial,
+        layers.showSubCuencaPluvial,
+        layers.showRedTroncalPluvial
+    )
+}
