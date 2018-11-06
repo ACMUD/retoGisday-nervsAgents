@@ -1,0 +1,9 @@
+body {
+    height: 96vh;
+    width: 96vw;
+}
+
+#mainMap {
+    height: 100%;
+    width: 100%;
+}

@@ -30,20 +30,26 @@
             "esri/layers/FeatureLayer",
         ], function(Map, MapView, FeatureLayer) {
 
-            var generationPlants = new FeatureLayer ({
-                url: "http://arcgis.simec.gov.co:6080/arcgis/rest/services/UPME_EN/UPME_EN_Generaci%C3%B3n_Real/MapServer/0"
+            var portals = new FeatureLayer ({
+                url: "https://services1.arcgis.com/J5ltM0ovtzXUbp7B/arcgis/rest/services/Transmilenio_RP/FeatureServer/0"
+                // url: "http://arcgis.simec.gov.co:6080/arcgis/rest/services/UPME_EN/UPME_EN_Generaci%C3%B3n_Real/MapSer   ver/0"
             });
 
+            var stations = new FeatureLayer ({
+                url: "https://services1.arcgis.com/J5ltM0ovtzXUbp7B/arcgis/rest/services/Transmilenio_RP/FeatureServer/1"
+                // url: "http://arcgis.simec.gov.co:6080/arcgis/rest/services/UPME_EN/UPME_EN_Generaci%C3%B3n_Real/MapSer   ver/0"
+            });
+    
             var map = new Map ({
-                basemap: "dark-gray",
-                layers: [generationPlants]
+                basemap: "topo", //dark-gray",
+                layers: [portals, stations]
             });
 
             var mapView = new MapView ({
                 container: "mapView",
                 map: map,
                 center: [-74, 3],
-                scale: 50000000
+                scale: 50000
             });
         });
     </script>
