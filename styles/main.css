@@ -1,0 +1,23 @@
+.mapView {
+    height: 100%;
+    width: 100%;
+}
+
+.mapContainer {
+    height: 900px;
+}   
+
+/* header {
+    position: fixed;
+    width: 100vw;
+    z-index: 1;
+} */
+
+.items {
+    padding: 5px;
+    background-color: #eeeeee;
+    color: #337ab7;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
