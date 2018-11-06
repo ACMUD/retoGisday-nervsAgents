@@ -30,33 +30,95 @@
             "esri/layers/FeatureLayer",
         ], function(Map, MapView, FeatureLayer) {
 
-            var controlValve = new FeatureLayer ({
-                url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/11"
+        //SISTEMA DE ACUEDUCTO
+
+            //var conduccion = new FeatureLayer ({
+            //    url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/1"
+            //});
+
+            //var camaraAcceso = new FeatureLayer ({
+            //    url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/2"
+            //});
+
+            //var estacionBombeo = new FeatureLayer ({
+            //    url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/3"
+            //});
+
+            //var plantaTratamiento = new FeatureLayer ({
+            //    url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/4"
+            //});
+
+            //var hidrante = new FeatureLayer ({
+            //    url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/7"
+                //datos url: "http://www.arcgis.com/home/item.html?id=1027ce2fc6a3431a86e76c3dbd575c2f#data"
+            //});
+
+            //var valvulaControl = new FeatureLayer ({
+            //    url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/11"
+            //});
+
+            //var redMenor = new FeatureLayer ({
+            //    url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/14"
+            //});
+
+            //var redMatriz = new FeatureLayer ({
+            //    url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/15"
+            //});
+
+            //var distrito = new FeatureLayer ({
+            //    url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/17"
+            //});
+
+            //var subSector = new FeatureLayer ({
+            //    url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/18"
+            //});
+
+  
+            //var map = new Map ({
+            //    basemap: "topo", 
+            //    layers: [conduccion, camaraAcceso, plantaTratamiento, hidrante, valvulaControl, redMenor, redMatriz, distrito, subSector]
+            //});
+
+
+            var redTroncal = new FeatureLayer ({
+                url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/AlcantarilladoSanitario/MapServer/9"
             });
 
-            var treatmentPlant = new FeatureLayer ({
-                url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/4"
+            var subSector = new FeatureLayer ({
+                url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/18"
             });
 
-            var systemValve = new FeatureLayer ({
-                url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/12"
+
+            var cuencaPluvial = new FeatureLayer ({
+                url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/AlcantarilladoPluvial/MapServer/13"
             });
 
-            var redMatriz = new FeatureLayer ({
-                url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/RedAcueducto2018/MapServer/15"
+            var subCuencaPluvial = new FeatureLayer ({
+                url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/AlcantarilladoPluvial/MapServer/12"
+            });
+            
+            var redTroncalPluvial = new FeatureLayer ({
+                url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/AlcantarilladoPluvial/MapServer/9"
             });
 
-    
+            var subCuencaPluvial = new FeatureLayer ({
+                url: "https://www.acueducto.com.co/wassigue/arcgis/rest/services/AlcantarilladoPluvial/MapServer/12"
+            });
+            
+
+
             var map = new Map ({
                 basemap: "topo", 
-                layers: [controlValve, treatmentPlant, systemValve, redMatriz]
+                layers: [conduccion, camaraAcceso, plantaTratamiento, hidrante, valvulaControl, redMenor, redMatriz, distrito, redTroncal, subSector, cuencaPluvial, subCuencaPluvial, redTroncalPluvial]
             });
+
+            
 
             var mapView = new MapView ({
                 container: "mapView",
                 map: map,
-                center: [-74, 4.6],
-                scale: 500000
+                center: [-74.11033, 4.61],
+                scale: 52000
             });
         });
     </script>
